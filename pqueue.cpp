@@ -43,21 +43,21 @@ void Pqueue::enqueue(Cust *cust, int priority){
     	pqueue_head = new Node(cust,pqueue_head,priority);
 	}else{
   
-    	Node *ptr = pqueue_head;
-    	while (ptr->pqueue_next != NULL && priority >= ptr->pqueue_next->pqueue_priority){
+    		Node *ptr = pqueue_head;
+    		while (ptr->pqueue_next != NULL && priority >= ptr->pqueue_next->pqueue_priority){
       
-        	ptr = ptr->pqueue_next;
-    	}
-    	assert (ptr != NULL);
+        		ptr = ptr->pqueue_next;
+    		}
+    		assert (ptr != NULL);
 
-    	if (ptr->pqueue_next == NULL){
+    		if (ptr->pqueue_next == NULL){
       
-        	ptr->pqueue_next = new Node(cust,NULL,priority);
-    	}else{
+        		ptr->pqueue_next = new Node(cust,NULL,priority);
+    		}else{
       
-        	Node *temp = ptr->pqueue_next;
-        	ptr->pqueue_next = new Node(cust,temp,priority);
-    	}
+        		Node *temp = ptr->pqueue_next;
+        		ptr->pqueue_next = new Node(cust,temp,priority);
+    		}
 	}
 }
 
@@ -74,8 +74,8 @@ int Pqueue::length(){
 	Node *ptr = pqueue_head;
 	while (ptr != NULL){
   
-    	ptr = ptr->pqueue_next;
-    	pqueue_length++;
+    		ptr = ptr->pqueue_next;
+    		pqueue_length++;
 	}
 	return pqueue_length;
 }
