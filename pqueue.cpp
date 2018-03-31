@@ -41,8 +41,7 @@ void Pqueue::enqueue(Cust *cust, int priority){
 	if (pqueue_head == NULL || priority < pqueue_head->pqueue_priority){
   
     	pqueue_head = new Node(cust,pqueue_head,priority);
-	}
-	else{
+	}else{
   
     	Node *ptr = pqueue_head;
     	while (ptr->pqueue_next != NULL && priority >= ptr->pqueue_next->pqueue_priority){
@@ -54,8 +53,7 @@ void Pqueue::enqueue(Cust *cust, int priority){
     	if (ptr->pqueue_next == NULL){
       
         	ptr->pqueue_next = new Node(cust,NULL,priority);
-    	}
-    	else{
+    	}else{
       
         	Node *temp = ptr->pqueue_next;
         	ptr->pqueue_next = new Node(cust,temp,priority);
