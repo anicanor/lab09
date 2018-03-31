@@ -33,3 +33,5 @@ class Pqueue{
     	};
     	Node *pqueue_head = NULL;
 };
+
+#endif
